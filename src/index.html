@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="shortcut icon" href="iconoLogo.ico" type="image/x-icon"><!--link para que aparezca el icon de nuestro logo en el titulo-->
+  <link rel="stylesheet" href="style.css"/>
+  <title>FaceWars</title>
+
 </head>
+
 <body>
-  <script type="module" src="main.js"></script>
+
+
+  
+  <div id='root'></div>
+<!-- 
+  <div id='mostrar'><div> -->
+<!------------------------------------acá comienza todo lo  de firebase---------------------------------------->
+   <!-- </section> -->
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+<!--TODO: Add SDKs for Firebase products that you want to use-->
+     <!-- https://firebase.google.com/docs/web/setup#available-libraries  -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDWjLUxTs5_kMC-YlFTL5KxF0VukeytNVg",
+    authDomain: "face-wars-9766e.firebaseapp.com",
+    databaseURL: "https://face-wars-9766e.firebaseio.com",
+    projectId: "face-wars-9766e",
+    storageBucket: "face-wars-9766e.appspot.com",
+    messagingSenderId: "805415784617",
+    appId: "1:805415784617:web:9c7d415c5f29bf7c53d9b8",
+    measurementId: "G-LBV2NL572E"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<!--------------------------------------------Aquí termina------------------------------------------------>
+  
+<script type="module" src="main.js"></script>
+  
 </body>
+
 </html>
