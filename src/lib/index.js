@@ -1,32 +1,26 @@
-// aqui exportaras las funciones que necesites
+ 
+import Login from './view/login.js';
+import Register from './view/register.js';
+import Error404 from './view/error.js';
+import Profile from './view/profile-user.js';
+import Configuration from './view/configuration-user.js';
+import editarPerfil from './view/edit-profile.js';
+import Videos from './view/videos.js';
+import Memes from './view/memes.js';
+import FanArt from './view/fanArt.js'
 
-/*export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};*/
-
-
-//html dimamico pagina principal
-export const google = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-
-  firebase.auth().signInWithPopup(provider)
-  .then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    console.log('user', user)
-    windows.location.hash = '#/home';
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    console.log('error', error.message)
-    // ...
-  });
+const components = {
+    login: Login,
+    registro: Register,
+    profile: Profile,
+    editarPerfil: editarPerfil,
+    configuration: Configuration,
+    edit: editarPerfil,
+    error: Error404,
+    videos: Videos,
+    memes: Memes,
+    fanArt: FanArt
 }
+
+
+export { components }

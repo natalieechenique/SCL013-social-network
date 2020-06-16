@@ -1,23 +1,41 @@
-export const mostrarMemes =() => {
+export default () => {
     window.location.hash = "#/memes";
-    let contenido = `
+    const divElement = document.createElement("div");
+    divElement.setAttribute("class", "containerAll");
+    divElement.innerHTML = `
 
     <div class="containerAll">
         <section class="container2">
+        <header class="header2">
+<!---logo -->
+<div class="logocont">
+<img src="logotitulo.png" width="100" height="50">
+</div>   
+
+    </header>
+        <!---menu pagina-->
+        <input type="checkbox" id="btn-menu">
+            </nav>
+            <nav class="menu">
+              <ul>
+                   <li><a href="#/user-profile"><i class="fas fa-newspaper"></i><span>Publicaciones</span></a>
+                   <li><a href="#/videos"><i class="fas fa-video"></i> <span>Videos</span></a></li>
+                   <li><a href="#/memes"><i class="fas fa-grin-squint"></i> <span>Memes</span></a></li>
+                   <li><a href="#/fanArt"><i class="fas fa-paint-brush"></i> <span>Fan Art</span></a></li>                
+                   </ul>
+            </nav>
   
-            <div class='header'>
-            <img src="logotitulo.png" width="200" height="100">
-                    <h2 class='subtitle'>La red para seguidores de Star Wars</h2>
-                </div>
-        
                 <!--Pega aquí tu meme-->
                 <div class='contenedor'>
                     <div class='divPrincipalImg'>
-                        <img src='img/iconopost.png' class='icono-post'>
                         <div class='divPrincipalPublicar'>
-                            <textarea id='post' class='inputPost' type='text'></textarea>
+                        
                         </div>
-                        <img id='publicar' src='./img/publicar.png' class='btn-publicar'>
+                        <img id='like' src='MEME1.jpg' width="300" height="300"> <vr>
+                        <img id='like' src='MEME2.jpg' width="300" height="300"> <vr>
+                        <img id='like' src='MEME3.jpg' width="300" height="300"> <vr>
+                        
+                        
                     </div>
               </div>
             
@@ -26,7 +44,6 @@ export const mostrarMemes =() => {
               </div>
   `;
 
-  return contenido;
+  return divElement;
   
   };
-  

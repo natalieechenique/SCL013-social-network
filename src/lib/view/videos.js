@@ -1,30 +1,39 @@
-export const mostrarVideos =() => {
+export default () => {
     window.location.hash = "#/videos";
-    let contenido = `
-
+    const divElement = document.createElement("div");
+    divElement.setAttribute("class", "containerAll");
+    divElement.innerHTML = `
     <div class="containerAll">
-        <section class="container2">
-  
-            <div class='header'>
-            <img src="logotitulo.png" width="200" height="100">
-                    <h2 class='subtitle'>La red para seguidores de Star Wars</h2>
-                </div>
-        
+     <section class="container2">
+        <header class="header2">
+            <!---logo -->
+            <div class="logocont">
+            <img src="logotitulo.png" width="100" height="50">
+            </div>   
+
+            </header>
+                <!---menu pagina-->
+                    <input type="checkbox" id="btn-menu">
+        </nav>
+        <nav class="menu">
+          <ul>
+               <li><a href="#/user-profile"><i class="fas fa-newspaper"></i><span>Publicaciones</span></a>
+               <li><a href="#/videos"><i class="fas fa-video"></i> <span>Videos</span></a></li>
+               <li><a href="#/memes"><i class="fas fa-grin-squint"></i> <span>Memes</span></a></li>
+               <li><a href="#/fanArt"><i class="fas fa-paint-brush"></i> <span>Fan Art</span></a></li>                
+               </ul>
+        </nav>
+
                 <!--Sube aqui tu video-->
-                <div class='contenedor'>
-                    <div class='divPrincipalImg'>
-                        <img src='img/iconopost.png' class='icono-post'>
-                        <div class='divPrincipalPublicar'>
-                            <textarea id='post' class='inputPost' type='text'></textarea>
+                <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OQO4YjxjMaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <img id='publicar' src='./img/publicar.png' class='btn-publicar'>
-                    </div>
               </div>
             
               </section>
             
               </div>
   `;
-  return contenido;
+  return divElement;
   };
   
