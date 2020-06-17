@@ -1,6 +1,6 @@
+
 import { changeview } from './lib/router.js';
 import {online, currentUser} from './lib/firebase.js'
-
 
 window.location.hash = '#/';
 

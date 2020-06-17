@@ -22,5 +22,4 @@ const components = {
     fanArt: FanArt
 }
 
-
 export { components }

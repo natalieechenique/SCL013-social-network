@@ -1,192 +1,144 @@
-
-  *{
-    box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
+
 html {
-    height: 100%;
+  height: 100%;
 }
-
 
 body {
-    font-family: 'PT Sans', sans-serif;
-    background-image: url("fondo.jpg");
-    resize: none;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    padding:20px;
-    padding-top: 40px;
-    height: 100%;
-    margin: 0;
+  font-family: "PT Sans", sans-serif;
+  background-image: url("fondo.jpg");
+  resize: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8px;
+  padding-top: 50px;
+  height: 100%;
+  margin: 0;
 }
 
 .containerAll {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
 }
 
-
-  .container2 {
-    display:flex;
-    flex-direction: column;
-    align-content: center;
-    background-color: #f1ebefef;
-    align-self: center;
-    padding:25px;
+.container2 {
+  background-color: #f1ebefef;
   border-radius: 20px;
- width:20% 50%
+  padding:6px;
 }
 
 header {
-    background-color: #f1ebefef;
-    padding: 5px;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-   border-radius: 6px;
-   width: 100%;
-   border-bottom: 2px solid rgb(219, 189, 211);
+  background-color: #f1ebefef;
+  padding: 10px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  border-radius: 6px;
+  width: 100%;
+  border-bottom: 2px solid rgb(219, 189, 211);
 }
 
+.header2 {
+  display:flex;
+  align-items: flex-start;
+  text-align:center;
+}
 
 .subtitle {
-font-family: monospace;
-font-size: 12px;
+  font-family: monospace;
+  font-size: 12px;
 }
 
 .login {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 240px; 
-    padding: 10px;
+  display: grid;
+  grid-gap: 3px;
+  width: 240px;
+  padding: 15px;
 }
 
-.formulario, .acceder {
-display:flex;
-flex-direction:column;
-
+#icon-google {
+  text-align: center;
 }
-
-
 
 h1 {
-    text-align: center;
-    padding: 2%;
-    font-size: 25px;
-    color: rgb(48, 47, 47);
+  text-align: center;
+  padding: 2%;
+  font-size: 25px;
+  color: rgb(48, 47, 47);
 }
 
-
-/* .datos { */
-/* 
-    input .redondear{
-    flex-direction: column;
-    margin-bottom:5px;
-    border-radius: 5px;
-    width: 75%;
-    padding: 7px;
-    box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
-} */
-
-.google {
-    font-size: 15px;
+.datos {
+  margin-bottom: 3px;
+  border-radius: 5px;
+  padding: 6px;
+  box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
 }
 
-.#nameuser {
-    font-size:1em;
+.ingresogoogle {
+  text-align: center;
 }
 
-.logocont {
-    display:flex;
-    align-items: flex-start;
-
+#icon-google {
+  font-size: 10px;
+  text-align: center;
+  align-content: center;
 }
 
 .btn {
-    background-color: #bab3ca;
-    box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
-    border-radius: 7px;
-    width: 75%;
-    padding: 6px
-} 
-
-.atrasbtn {
-    background-color: #b88563;
-    box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
-    border-radius: 7px;
-    width: 75%;
-    padding: 6px
+  background-color: #bab3ca;
+  box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
+  border-radius: 7px;
+  padding: 6px;
 }
 
-.recuperar {
-    margin:5%;
-    padding:10px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: darkslategrey;
-    cursor: pointer;
+.iconos {
+  text-align: center;
+  padding: 10px;
 }
 
+.recuperar,
 .aqui {
-    margin:5%;
-    padding:10px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: darkslategrey;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategrey;
+  text-align: center;
 }
 
-.login p{
-    margin-top:7%;
+.login p {
+  margin-top: 7%;
 }
 
 .email2 {
-    border-radius: 40%;
+  border-radius: 40%;
 }
 
-
-
-/* MENU HOME 
-
-.header2 {
-    display:flex;
-    flex-direction:row;
-    background-color: #f3f0f2ef;
-   border-radius: 6px;
-   border-bottom: 2px solid rgb(219, 189, 211);
+.nombre {
+  font-size: 12px;
 }
 
-.box2 { 
-    display:flex;
+.logocont2 {
+
 }
 
-.divPost {
-    background-color: #f3f0f2ef;
-   
+.user-name {
+  text-align:center;
+  padding-left: 15px;
 }
 
-
-.edit-options {
+.scroll {
 text-align:center;
 }
 
-ul li {
-    list-style: none;
-}
 
-.img {
-    text-align: left;
-    }
-    
-    #btn-menu, .icono{
-        display: none;
-    }
-*/
- 
- /* PRUEBA MENU BOTTOM  
-
+/* PRUEBA MENU BOTTOM  CELULAR
   .menu {
     position: fixed;
     bottom : 0;
@@ -198,7 +150,7 @@ ul li {
     list-style: none;
 }
 
-.menu ul {
+.menu, .ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -207,13 +159,13 @@ ul li {
     margin: 0;
 } 
 
- .menu ul li {
+ .menu, .ul li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.menu ul li a {
+.menu, .ul li a {
     font-size: 18px;
     display: flex;
     flex-direction: column;
@@ -224,201 +176,187 @@ ul li {
     list-style: none;
 }
 
-.menu ul li a span {
+.menu, .ul li a span {
     padding-top: 5px;
     font-size: 10px;
     list-style: none;
 }    
 */
-    
 
+/* MENU TOP DESKTOP */
 
-
-
-
-
-
-
-/* 
-    MENU TOP DESKTOP */
- 
-     label .icono{
-        display: none;
-        font-size: 30px;
-        color: #FFF;
-        width: 30px;
-        height: 50px;
-        padding: 10px;
-    }
-    
-     label .icono:hover{
-        width: 50px;
-        cursor: pointer;
-        background-color: #040522;
-    }
-
-header label .icono:hover{
-    width: 50px;
-    cursor: pointer;
-    background-color: #7F81B1;
+label .icono {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  width: 30px;
+  height: 50px;
+  padding: 10px;
 }
 
+label .icono:hover {
+  width: 50px;
+  cursor: pointer;
+  background-color: #040522;
+}
 
-ul {
-    display:flex;
-    flex-direction: grid;
+header label .icono:hover {
+  width: 50px;
+  cursor: pointer;
+  background-color: #7f81b1;
+}
+
+.ul {
+  display: flex;
   justify-content: center;
-    text-align: center;
+  text-align: center;
 }
 
-.menu ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
+.menu {
+  padding: 8px;
 }
 
-.menu li{
-    border-right: 1px solid #FFF;
-    text-align: center;
-    flex-grow: 1;
+.menu li {
+  border-right: 1px solid #fff;
+  text-align: center;
+  flex-grow: 1;
+  list-style: none;
 }
 
-.menu li:hover{
-    background-color: #A3A7D4;
+.menu li:hover {
+  background-color: #a3a7d4;
 }
 
-.menu li a{
-    background-color: rgb(131, 120, 151);
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
-    border: none;
-    border-radius: 6px;
-    max-width: 100%;
-    display: block;
-    color: #FFF;
-    text-decoration: none;
-}  */
-
- 
-/* PRUEBA MENU TOP     */
-
- 
-
-  /* .navBarContainer {
-    position: fixed;
-    top : 0;
-    left:0;
-    width: 60%;
-    background: white;
-    padding: 10px 20px;
-} 
-
- .navBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: 'center';
-} 
-
- .logoContainer {
- width: 100px;
- display: flex;
- align-items: center;
-} */
-
-/* .appLogo {
-   width: 100%;
- }
-
-.dropdownContainer {
-    width: max-content;
- }
- 
-a.iconButton {
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #999;
-}  
-  */
-
-
-/* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.menu li a {
+  background-color: rgb(131, 120, 151);
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  max-width: 100%;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
 
 
 /* POST */
- 
-
-
-/* .post { */
-    /* max-width: 100%; */
-    /* border-radius: 6px;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
-} */
-
-/* .btnpost {
-    display:flex;
-    font-size: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
-    }
-    
-.reaccion-cont{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    border-radius: 6px;
+#sign-out {
+  text-align: center;
+  font-size: 12px;
 }
 
-.like {
-justify-content: left;
+.small sign-out {
+  font-size: 12px;
 }
-*/
 
-.cerrarsesion {
-    display:flex;
-    justify-content: flex-end;
-    text-align:center;
-    font-size: 12px;
-} 
+#valores {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  font-size: 14px;
+}
 
+.privatePost {
+  font-size: 14px;
+  margin-left: 0px;
+  padding-top: 30px;
+}
 
+#private {
+  padding-top: 20px;
+}
 
- container-view-profile */
+.divPost {
+  text-align: left;
+  padding: 10px;
+  box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
+}
 
+.box2 {
+  background-color: #dbd9d8;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border-bottom: 2px solid rgb(219, 189, 211);
+}
+
+.encabezado {
+  background-color: #cac8c7;
+}
+
+.edit-options {
+  align-items: center;
+  text-align: center;
+}
+
+.button-acceder {
+  margin: 5px;
+}
+
+#sign-out {
+  font-size: 12px;
+}
+
+.input2 {
+  text-align: center;
+}
+
+iframe {
+  display: flex;
+  text-align: center;
+  align-self: center;
+  margin-left: 6px;
+}
+
+.divPrincipalImg {
+  background-color: #f1ebefef;
+  align-self: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.contenedorArt {
+  text-align: center;
+  padding: 20px;
+}
+
+.sad {
+  text-align: center;
+}
+
+#message {
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+}
+
+.element {
+  text-align: center;
+}
+
+.box1 {
+  justify-content: right;
+  text-align:right;
+}
+
+.menu2 {
+text-align:center;
+}
+
+.element-photo2 {
+  text-align: center;
+}
 
 /* RESPONSIVE */
-
 @-ms-viewport {
-    width: device-width;
-  } 
+  width: device-width;
+}
 
-
-/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec68.cur), auto !important;} /* End http://www.cursors-4u.com */
+/* Start http://www.cursors-4u.com */
+* {
+  cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec68.cur), auto !important;
+}
+/* End http://www.cursors-4u.com */
