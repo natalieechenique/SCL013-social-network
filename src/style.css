@@ -6,30 +6,36 @@ html {
   height: 100%;
 }
 
+#root{
+  background-size: cover;
+  text-align:center;
+}
+
 body {
   font-family: "PT Sans", sans-serif;
   background-image: url("fondo.jpg");
+  background-color: #1d0303;
   resize: none;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 8px;
-  padding-top: 50px;
+  padding:10px;
   height: 100%;
   margin: 0;
 }
 
 .containerAll {
-  display: flex;
+ display:flex;
+ flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 10px;
+  padding: 20px;
 }
 
 .container2 {
-  background-color: #f1ebefef;
+  background-color: #e6dde3ef;
   border-radius: 20px;
-  padding:6px;
+  padding:20px;
+  align-items: center;
 }
 
 header {
@@ -45,8 +51,18 @@ header {
 
 .header2 {
   display:flex;
-  align-items: flex-start;
+  align-content: flex-start;
+  justify-items: center;
   text-align:center;
+  border-bottom: 2px solid rgb(230, 215, 226);
+  border-radius: 20px;
+}
+
+.header3 {
+  text-align:center;
+  border-bottom: 2px solid rgbrgb(230, 215, 226);
+  border-radius: 20px;
+  border-radius: 20px;
 }
 
 .subtitle {
@@ -57,7 +73,7 @@ header {
 .login {
   display: grid;
   grid-gap: 3px;
-  width: 240px;
+  text-align:center;
   padding: 15px;
 }
 
@@ -124,17 +140,24 @@ h1 {
   font-size: 12px;
 }
 
-.logocont2 {
-
+.logotitulo {
+  text-align:left;
 }
 
 .user-name {
+  justify-self: center;
   text-align:center;
-  padding-left: 15px;
+  padding-left: 100px;
 }
 
 .scroll {
 text-align:center;
+}
+
+footer {
+  color:white;
+  text-align: center;
+  padding:10px;
 }
 
 
@@ -210,10 +233,13 @@ header label .icono:hover {
   display: flex;
   justify-content: center;
   text-align: center;
+  max-width: 100%;
 }
 
 .menu {
-  padding: 8px;
+  padding: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
+  border-radius: 7px;
 }
 
 .menu li {
@@ -244,6 +270,11 @@ header label .icono:hover {
 
 
 /* POST */
+
+.inputPost {
+text-align:left;
+}
+
 #sign-out {
   text-align: center;
   font-size: 12px;
@@ -272,19 +303,20 @@ header label .icono:hover {
 
 .divPost {
   text-align: left;
-  padding: 10px;
-  box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
+  padding: 5px;
+  box-shadow: 3px 8px 10px -7px rgb(202, 149, 149);
+  border-radius: 6px;
 }
 
 .box2 {
-  background-color: #dbd9d8;
+  background-color: #dfd0ca;
   padding-bottom: 10px;
   border-radius: 5px;
-  border-bottom: 2px solid rgb(219, 189, 211);
+  border-bottom: 2px solid rgb(241, 211, 198);
 }
 
 .encabezado {
-  background-color: #cac8c7;
+  background-color: #d6c0b5;
 }
 
 .edit-options {
@@ -349,6 +381,25 @@ text-align:center;
 .element-photo2 {
   text-align: center;
 }
+
+#user-image { 
+text-align: center;
+}
+
+.logocont2 {
+ align-self: flex-start;
+text-align: center;
+}
+
+.edit{
+  text-align:center;
+}
+
+
+.formulario1 {
+  text-align:center;
+}
+
 
 /* RESPONSIVE */
 @-ms-viewport {

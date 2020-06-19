@@ -13,59 +13,60 @@ import {
   firebaseAuthState,
   promiseOfAddFirebase,
   getUrlImageFromStorage,
-} from "./firebase.js";
+} from './firebase.js';
 
 const changeHash = (hash) => {
-  location.hash = hash;
+  window.location.hash = hash;
 };
 
 const ingresarClick = (email, password) => {
-  if (email === "" || password === "") {
-    alert("Completa tus datos para ingresar");
+  if (email === '' || password === '') {
+    alert('Completa tus datos para ingresar');
   } else {
     signIn(email, password)
-      .then((cred) => {
-        changeHash("#/user-profile");
+      .then(() => {
+        changeHash('#/user-profile');
       })
       .catch((error) => {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
-        console.log(errorMessage);
-        if (errorCode == "auth/weak-password") {
-          alert("El nivel de seguridad de la contraseña es : débil.");
-        } else if (errorCode == "auth/email-already-in-use") {
-          alert("Ya existe esta cuenta");
-        } else if (errorCode == "auth/invalid-email") {
-          alert("La dirección de correo electrónico es inválida");
-        } else if (errorCode == "auth/invalid-email") {
-          alert("La dirección de correo electrónico es inválida");
+        // console.log(errorMessage);
+        if (errorCode === 'auth/weak-password') {
+          alert('El nivel de seguridad de la contraseña es : débil.');
+        } else if (errorCode === 'auth/email-already-in-use') {
+          alert('Ya existe esta cuenta');
+        } else if (errorCode === 'auth/invalid-email') {
+          alert('La dirección de correo electrónico es inválida');
+        } else if (errorCode === 'auth/invalid-email') {
+          alert('La dirección de correo electrónico es inválida');
         } else {
           alert(
-            "No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado."
-          );
+            'No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado.'
+          )
         }
-        console.log(error);
+        // console.log(error);
       });
-  }
+  };
 };
 
 const registrarClick = (email2, password2, userName) => {
-  if (email2 === "" || password2 === "" || userName === "") {
-    alert("Completa tus datos para registrarte");
+  if (email2 === '' || password2 === '' || userName === '') {
+    alert('Completa tus datos para registrarte');
   } else {
     signUp(email2, password2).then(() => {
       let user = currentUser();
-      return promiseOfSetFirebase("users", user.uid, {
+
+      return promiseOfSetFirebase('users', user.uid, {
         name: userName,
         photo:
-          "https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png",
+        'https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png',
         userId: user.uid,
         email: email2,
       }).then(() => {
-        const form = document.querySelector("#register-form");
+        const form = document.querySelector('#register-form');
         form.reset();
-        alert("Registrado exitosamente");
+        alert('Registrado exitosamente');
         signOut();
       });
     });
@@ -75,17 +76,17 @@ const registrarClick = (email2, password2, userName) => {
 const ingresarGoogleClick = () => {
   signInWithGoogle()
     .then((result) => {
-      changeHash("#/user-profile");
+      changeHash('#/user-profile');
       // This gives you a Google Access Token. You can use it to access the Google API.
       let token = result.credential.accessToken;
       // The signed-in user info.
       let user = result.user; // ...
-      console.log(token);
+      // console.log(token);
       const userName = user.displayName;
       const userEmail = user.email;
       const userPhoto = user.photoURL;
       const idUser = user.uid;
-      return promiseOfSetFirebase("users", idUser, {
+      return promiseOfSetFirebase('users', idUser, {
         name: userName,
         userId: idUser,
         email: userEmail,
@@ -96,69 +97,69 @@ const ingresarGoogleClick = () => {
       // Handle Errors here.
       let errorCode = error.code;
       let errorMessage = error.message;
-      if (errorCode == "auth/weak-password") {
-        alert("The password is too weak.");
+      if (errorCode === 'auth/weak-password') {
+        alert('The password is too weak.');
       } else {
         alert(errorMessage);
       }
-      console.log(error);
+      // console.log(error);
     });
 };
 const cerrarSesionUsuario = () => {
   signOut();
 };
 
-//Funcion que retorna la data del usuario (documento con el id del usuario)
+// Funcion que retorna la data del usuario (documento con el id del usuario)
 const obtenerDatosUsuario = (uid) => {
-  return promiseOfgetFirebase("users", uid)
+  return promiseOfgetFirebase('users', uid)
     .then((doc) => {
       // console.log(doc.data()
       return doc.data(); // retorna una promesa
     })
     .catch((error) => {
-      console.log("Error getting document:", error);
+      // console.log('Error getting document:', error);
     });
 };
 
 const eliminarPostAlClick = (idPost, idUserOfPost) => {
   const uidOfCurrentUser = currentUser().uid; // id del usuario logueado actual
-  console.log(uidOfCurrentUser); // id del usuario logueado actual
-  console.log(idUserOfPost); // id del usuario  dentro del objeto post
-  console.log(idPost); // id del post
+  // console.log(uidOfCurrentUser); // id del usuario logueado actual
+  // console.log(idUserOfPost); // id del usuario  dentro del objeto post
+  // console.log(idPost); // id del post
   if (uidOfCurrentUser === idUserOfPost) {
-    promiseOfdeleteFirebase("posts", idPost)
+    promiseOfdeleteFirebase('posts', idPost)
       .then(() => {
-        console.log("Document successfully deleted!");
+        // console.log('Document successfully deleted!');
       })
       .catch((error) => {
-        console.error("Error removing document: ", error);
+        // console.error('Error removing document: ', error);
       });
   } else {
-    alert("You can not delete a comment which was not published by you");
+    alert('You can not delete a comment which was not published by you');
   }
 };
 
 const editarPostEnFirestore = (idPost, idUserOfPost, commentInputNewValue) => {
   const uidOfCurrentUser = currentUser().uid; // id del usuario logueado actual
-  console.log(idPost); // id del post
+  // console.log(idPost); // id del post
   if (uidOfCurrentUser === idUserOfPost) {
-    promiseOfUpdateFirebase("posts", idPost, {
+    promiseOfUpdateFirebase('posts', idPost, {
       content: commentInputNewValue,
     })
       .then(() => {
-        console.log("Document successfully updated!");
+        // console.log('Document successfully updated!');
       })
       .catch((error) => {
         // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
+        // console.error('Error updating document:', error);
       });
   } else {
-    alert("You can not edit a comment which was not published by you");
+    alert('You can not edit a comment which was not published by you');
   }
 };
 
 const getPostsInRealtime = (callback) => {
-  promiseOnSnapshotFirebase("posts", (arrOfAllPosts) => {
+  promiseOnSnapshotFirebase('posts', (arrOfAllPosts) => {
     let arrOfPosts = [];
     arrOfAllPosts.forEach((onePost) => {
       arrOfPosts.push({ id: onePost.id, ...onePost.data() });
@@ -192,9 +193,9 @@ const addPostToCloudFirestore = (
   photo
 ) => {
   const f = new Date();
-  let fecha = f.getDate() + "-" + (f.getMonth() + 1) + "-" + f.getFullYear();
-  promiseOfAddFirebase("posts", {
-    hours: f.getHours() + ":" + f.getMinutes(),
+  const fecha = f.getDate() + '-' + (f.getMonth() + 1) + '-' + f.getFullYear();
+  promiseOfAddFirebase('posts', {
+    hours: f.getHours() + ':' + f.getMinutes(),
     today: fecha,
     content: inputComment,
     userId: idUser,
@@ -203,11 +204,11 @@ const addPostToCloudFirestore = (
     photoPost: photo,
   })
     .then((docRef) => {
-      console.log(docRef);
-      console.log("Document written with ID: ", docRef.id);
+      // console.log(docRef);
+      // console.log('Document written with ID: ', docRef.id);
     })
     .catch((error) => {
-      console.error("Error adding document: ", error);
+      // console.error('Error adding document: ', error);
     });
 };
 
@@ -225,23 +226,23 @@ const manejarInfoEnviada = (
       }
     );
   } else {
-    addPostToCloudFirestore(inputComment, idUser, statusComment, "");
+    addPostToCloudFirestore(inputComment, idUser, statusComment, '');
   }
 };
 
 const editarPerfil = (name1, age1, sex1, birthCountry, userId1) => {
-  promiseOfUpdateFirebase("users", userId1, {
+  promiseOfUpdateFirebase('users', userId1, {
     name: name1,
     age: age1,
     sex: sex1,
     country: birthCountry,
   })
     .then(() => {
-      console.log("Document successfully updated!");
+      // console.log('Document successfully updated!');
     })
     .catch((error) => {
       // The document probably doesn't exist.
-      console.error("Error updating document: ", error);
+      // console.error('Error updating document: ', error);
     });
 };
 
