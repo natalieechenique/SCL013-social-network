@@ -16,7 +16,7 @@ const renderOnePost = (post, user, current) => {
   <div id="comment-author" class='encabezado'>
 
   <p>Publicado por ${user.name}</p>
-  <p>${post.hours}, ${post.today}</p> 
+  <p>${post.today}, ${post.hours}</p> 
 </div>
 
   <div class="text-comment height-auto" id="content-comment-div" data-id-post="${post.id}" >${post.content}
