@@ -1,7 +1,5 @@
-
 import { components } from './index.js';
-import { obtenerDatosUsuario, getUserActive, getPostsInRealtime /* getUsersAfterLikes */, 
-} from './control.js';
+import { obtenerDatosUsuario, getUserActive, getPostsInRealtime } from './control.js';
 
 // rutas para ingresar a diferente paginas
 const changeview = (route) => {
@@ -16,6 +14,7 @@ const changeview = (route) => {
       break;
 
     case '#/user-profile': // perfil del usuario
+      // eslint-disable-next-line no-case-declarations
       const printUserInfo = (user) => {
         if (user) {
           const uid = user.uid;
@@ -35,8 +34,8 @@ const changeview = (route) => {
         }
       };
       getUserActive(printUserInfo);
-
       break;
+
     case '#/edit-profile': //pagina editar el perfil
       {
         const printUserInfo = (user) => {

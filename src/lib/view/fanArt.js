@@ -14,22 +14,20 @@ export default () => {
   <nav class='menu'>
     <div class='ul'>
          <li><a href='#/user-profile'><i class='fas fa-newspaper'></i><span>Publicaciones</span></a>
-         <li><a href='#/videos'<i class='fas fa-grin-squint'></i> <span>Memes</span></a></li>
+         <li><a href='#/videos'><i class='fas fa-video'></i> <span>Videos</span></a></li>
+         <li><a href='#/memes'<i class='fas fa-grin-squint'></i> <span>Memes</span></a></li>
          <li><a href='#/fanArt'><i class='fas fa-paint-brush'></i> <span>Fan Art</span></a></li>                
          </div>
   </nav>
-  <div id='Layer1' class='scroll' style='width:100%; height:250px; overflow: scroll;'>
+  <div id='Layer1' class='scroll'>
               <!--Pega aquí tu FanArt-->
-              <div class='divPost'>
-              <div id='Layer1' class='scroll' style='width:100%; height:270px; overflow: scroll;'>
-              <img id='like' src='ARTE1.jpg' width='300' height='300'> <vr>
-              <img id='like' src='ARTE2.jpg' width='300' height='300'> <vr>
-              <img id='like' src='ARTE3.jpg' width='300' height='300'> <vr>
+              <div class='divImagenes'>
+              <img id='arte1' class='fanart' src='ARTE1.jpg' width='300' height='300'> <vr>
+              <img id='arte2' class='fanart' src='ARTE2.jpg' width='300' height='300'> <vr>
+              <img id='arte3' class='fanart' src='ARTE3.jpg' width='300' height='300'> <vr>
                </div>
             </div>
-          
-            </section>
-          
+            </section>   
             </div>
 `;
 

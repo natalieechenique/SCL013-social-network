@@ -1,4 +1,3 @@
-
 // importamos la funcion para darle el evento al boton registar
 import { registrarClick } from '../control.js';
 
@@ -10,20 +9,17 @@ export default () => {
     <div class='containerAll'>
     <section class='container2'>
     <header>
-    <img src='logotitulo.png' width='150' height='75'>
+    <img src='logotitulo.png' class='logotitulo'>
     <h2 class='subtitle'>La red para seguidores de Star Wars</h2>
     </header>
-    
     <form action='' class='login' id='register-form'>
-    <input type='text' id='name' class='datos' placeholder='Nombre y Apellidos'>                 
-    <input id='email2' class='datos' type='email' placeholder='Ingrese su correo'>
-    <input id='password2' class='datos' type='password' placeholder='Ingresa tu contraseña'><br>
+    <p class='inciciasesion'>Registro</p>
+    <input type='text' id='name' class='datos' placeholder='Nombre y Apellido'>                 
+    <input id='email2' class='datos' type='email' placeholder='Ingresa tu correo'>
+    <input id='password2' class='datos' type='password' placeholder='Ingresa tu contraseña'>
     <button type='button' class='btn' id='btn-sign-up'>Registrar</button>
-     </form>
-     
-    <p class='parrafo'>Si ya tienes una cuenta <a href=''>Inicia sesión</a></p>
-      </>
-    
+    </form>
+    <p class='parrafo'>Si ya tienes una cuenta <br><a href=''>Inicia sesión</a></p>
     </section>
     </div>
     `;

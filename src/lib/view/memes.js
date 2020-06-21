@@ -1,10 +1,8 @@
-
 export default () => {
   window.location.hash = '#/memes';
   const divElement = document.createElement('div');
   divElement.setAttribute('class', 'containerAll');
   divElement.innerHTML = `
-
     <div class='containerAll'>
         <section class='container2'>
         <header class='header2'>
@@ -22,20 +20,16 @@ export default () => {
                    <li><a href='#/fanArt'><i class='fas fa-paint-brush'></i> <span>Fan Art</span></a></li>                
             </div>
             </nav>
-            <div id='Layer1' class='scroll' style='width:100%; height:250px; overflow: scroll;'>
+            <div id='Layer1' class='scroll'>
                 <!--Pega aquí tu meme-->
-                    <main class='divPost'>
-                        <img id='like' src='MEME1.jpg' width='250' height='250'> <vr>
-                        <img id='like' src='MEME2.jpg' width='250' height='250'> <vr>
-                        <img id='like' src='MEME3.jpg' width='250' height='250'> <vr>
-                        <img id='like' src='MEME4.jpg' width='250' height='250'> <vr>
+                    <div class='divImagenes'>
+                        <img id='meme1' class='memes' src='MEME1.jpg' width='250' height='240'> <vr>
+                        <img id='meme2' class='memes' src='MEME2.jpg' width='250' height='240'> <vr>
+                        <img id='meme3' class='memes' src='MEME3.jpg' width='250' height='240'> <vr>
                     </div>
               </div>
-             
               </section>
-             </main>
               </div>
-
   `;
 
   return divElement;

@@ -1,5 +1,3 @@
-
-
 // import MockFirebase from 'mock-cloud-firestore';
 
 // const fixtureData = {
@@ -69,13 +67,9 @@
 //     }
 // };
 
-
-
 // global.firebase = new MockFirebase(fixtureData, {
 //     isNaiveSnapshotListenerEnabled: true
 // });
-
-
 
 // import {
 //     promiseOfgetFirebase,
@@ -86,8 +80,6 @@
 //     promiseOfSetFirebase,
 //     signUp
 // } from "../src/services/firebase.js";
-
-
 
 // describe('lista de notas', () => {
 //     it('Debería poder agregar una publicación', (done) => {
@@ -113,7 +105,6 @@
 //             })
 
 //         })
-
 
 //     })
 //     it('Debería poder actualizar una publicación', () => {

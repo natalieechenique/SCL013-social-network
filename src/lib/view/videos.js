@@ -10,7 +10,6 @@ export default () => {
             <img src='logotitulo.png' width='100' height='50'>
             </div>   
             </header>
-        
                 <!---menu pagina-->
         <nav class='menu'>
           <div class='ul'>
@@ -20,16 +19,12 @@ export default () => {
                <li><a href='#/fanArt'><i class='fas fa-paint-brush'></i> <span>Fan Art</span></a></li>                
                </div>
         </nav>
-        <div id='Layer1' class='scroll' style='width:100%; height:250px; overflow: scroll;'>
+        <div id='Layer1' class='scroll'>
                 <!--Sube aqui tu video-->
-                <main class='divPost'>
-                
-                <iframe width='300' height='200' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='4' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                <div class='divVideos'>
+                <iframe class='videos' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='4' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
               </div>
-
               </section>
-              </main>
-
               </div>
   `;
 

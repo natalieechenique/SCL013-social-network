@@ -6,13 +6,13 @@ html {
   height: 100%;
 }
 
-#root{
+#root {
   background-size: cover;
   text-align:center;
 }
 
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: sans-serif;
   background-image: url("fondo.jpg");
   background-color: #1d0303;
   resize: none;
@@ -32,14 +32,16 @@ body {
 }
 
 .container2 {
-  background-color: #e6dde3ef;
+  background-color: #e6dde3f5;
   border-radius: 20px;
   padding:20px;
   align-items: center;
+  text-align:center;
+  height:530px;
 }
 
 header {
-  background-color: #f1ebefef;
+  background-color: #f1ebeff5;
   padding: 10px;
   align-items: center;
   align-content: center;
@@ -55,15 +57,24 @@ header {
   justify-items: center;
   text-align:center;
   border-bottom: 2px solid rgb(230, 215, 226);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .header3 {
   text-align:center;
-  border-bottom: 2px solid rgbrgb(230, 215, 226);
-  border-radius: 20px;
-  border-radius: 20px;
+  border-bottom: 2px solid rgb(230, 215, 226);
+  border-radius: 10px;
 }
+
+.logotitulo {
+width: 150px;
+height: 75;
+}
+
+.logotitulo2 {
+  width: 70px;
+  height: 35px;
+  }
 
 .subtitle {
   font-family: monospace;
@@ -75,18 +86,14 @@ header {
   grid-gap: 3px;
   text-align:center;
   padding: 15px;
+  width: 100%;
 }
 
-#icon-google {
+.inciciasesion {
   text-align: center;
-}
-
-h1 {
-  text-align: center;
-  padding: 2%;
-  font-size: 25px;
-  color: rgb(48, 47, 47);
-}
+  font-size: 18px;
+  color: rgb(95, 73, 107);
+} 
 
 .datos {
   margin-bottom: 3px;
@@ -117,8 +124,7 @@ h1 {
   padding: 10px;
 }
 
-.recuperar,
-.aqui {
+.recuperar, .aqui {
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -141,13 +147,26 @@ h1 {
 }
 
 .logotitulo {
-  text-align:left;
+  text-align:center;
 }
 
 .user-name {
   justify-self: center;
   text-align:center;
-  padding-left: 100px;
+}
+
+.logocont2 {
+  align-self: flex-start;
+ text-align: left;
+ }
+ 
+.image-photo {
+  width:50px;
+  height:50px;
+}
+
+.element-photo2 {
+  text-align: center;
 }
 
 .scroll {
@@ -157,55 +176,12 @@ text-align:center;
 footer {
   color:white;
   text-align: center;
-  padding:10px;
+  font-size: 14px;
+  padding:8px;
 }
 
 
-/* PRUEBA MENU BOTTOM  CELULAR
-  .menu {
-    position: fixed;
-    bottom : 0;
-    left:0;
-    width: 100%;
-    background: white;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    list-style: none;
-}
-
-.menu, .ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-between;
-    padding: 10px 10px;
-    margin: 0;
-} 
-
- .menu, .ul li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.menu, .ul li a {
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #999;
-    list-style: none;
-}
-
-.menu, .ul li a span {
-    padding-top: 5px;
-    font-size: 10px;
-    list-style: none;
-}    
-*/
-
+ 
 /* MENU TOP DESKTOP */
 
 label .icono {
@@ -237,7 +213,7 @@ header label .icono:hover {
 }
 
 .menu {
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
   border-radius: 7px;
 }
@@ -258,7 +234,7 @@ header label .icono:hover {
   color: rgb(0, 0, 0);
   box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   font-size: 12px;
   border: none;
   border-radius: 6px;
@@ -266,7 +242,7 @@ header label .icono:hover {
   display: block;
   color: #fff;
   text-decoration: none;
-}
+} 
 
 
 /* POST */
@@ -303,9 +279,10 @@ text-align:left;
 
 .divPost {
   text-align: left;
-  padding: 5px;
+  padding: 0px;
   box-shadow: 3px 8px 10px -7px rgb(202, 149, 149);
   border-radius: 6px;
+  width:100%;
 }
 
 .box2 {
@@ -337,22 +314,35 @@ text-align:left;
 }
 
 iframe {
+  width:100%;
   display: flex;
   text-align: center;
   align-self: center;
   margin-left: 6px;
 }
 
-.divPrincipalImg {
-  background-color: #f1ebefef;
+.divVideos {
+  width:100%;
+  height:600px;
+  align-self: center;
+  text-align: center;
+  padding: 10px;
+} 
+
+.videos {
+  width:100%;
+  text-align:center;
+}
+
+.divImagenes {
   align-self: center;
   text-align: center;
   padding: 20px;
-}
+  height:700px;
+} 
 
-.contenedorArt {
-  text-align: center;
-  padding: 20px;
+.memes, .fanart {
+  padding: 10px;
 }
 
 .sad {
@@ -378,36 +368,21 @@ iframe {
 text-align:center;
 }
 
-.element-photo2 {
-  text-align: center;
-}
-
-#user-image { 
-text-align: center;
-}
-
-.logocont2 {
- align-self: flex-start;
-text-align: center;
-}
-
 .edit{
   text-align:center;
 }
-
 
 .formulario1 {
   text-align:center;
 }
 
-
-/* RESPONSIVE */
-@-ms-viewport {
-  width: device-width;
+.scroll {
+  width:100%; 
+  height:250px; 
+  overflow: scroll;
 }
 
-/* Start http://www.cursors-4u.com */
 * {
   cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec68.cur), auto !important;
 }
-/* End http://www.cursors-4u.com */
+

@@ -1,4 +1,3 @@
-
 // funcion creada para errores
 export default () => {
   const divElemt = document.createElement('div');

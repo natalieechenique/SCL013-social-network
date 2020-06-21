@@ -1,4 +1,6 @@
-
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-unused-vars */
 import {
   signIn,
   signUp,
@@ -13,59 +15,60 @@ import {
   firebaseAuthState,
   promiseOfAddFirebase,
   getUrlImageFromStorage,
-} from "./firebase.js";
+} from './firebase.js';
 
 const changeHash = (hash) => {
-  location.hash = hash;
+  window.location.hash = hash;
 };
 
 const ingresarClick = (email, password) => {
-  if (email === "" || password === "") {
-    alert("Completa tus datos para ingresar");
+  if (email === '' || password === '') {
+    // alert('Completa tus datos para ingresar');
   } else {
     signIn(email, password)
-      .then((cred) => {
-        changeHash("#/user-profile");
+      .then(() => {
+        changeHash('#/user-profile');
       })
       .catch((error) => {
         // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // eslint-disable-next-line no-console
         console.log(errorMessage);
-        if (errorCode == "auth/weak-password") {
-          alert("El nivel de seguridad de la contraseña es : débil.");
-        } else if (errorCode == "auth/email-already-in-use") {
-          alert("Ya existe esta cuenta");
-        } else if (errorCode == "auth/invalid-email") {
-          alert("La dirección de correo electrónico es inválida");
-        } else if (errorCode == "auth/invalid-email") {
-          alert("La dirección de correo electrónico es inválida");
+        if (errorCode === 'auth/weak-password') {
+          alert('El nivel de seguridad de la contraseña es : débil.');
+        } else if (errorCode === 'auth/email-already-in-use') {
+          alert('Ya existe esta cuenta');
+        } else if (errorCode === 'auth/invalid-email') {
+          alert('La dirección de correo electrónico es inválida');
+        } else if (errorCode === 'auth/invalid-email') {
+          alert('La dirección de correo electrónico es inválida');
         } else {
           alert(
-            "No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado."
-          );
+            'No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado.'
+          )
         }
-        console.log(error);
+        // console.log(error);
       });
-  }
+  };
 };
 
 const registrarClick = (email2, password2, userName) => {
-  if (email2 === "" || password2 === "" || userName === "") {
-    alert("Completa tus datos para registrarte");
+  if (email2 === '' || password2 === '' || userName === '') {
+
   } else {
     signUp(email2, password2).then(() => {
-      let user = currentUser();
-      return promiseOfSetFirebase("users", user.uid, {
+      const user = currentUser();
+      return promiseOfSetFirebase('users', user.uid, {
         name: userName,
         photo:
-          "https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png",
+        'https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png',
         userId: user.uid,
         email: email2,
       }).then(() => {
-        const form = document.querySelector("#register-form");
+        const form = document.querySelector('#register-form');
         form.reset();
-        alert("Registrado exitosamente");
+        // alert('Registrado exitosamente');
         signOut();
       });
     });
@@ -75,17 +78,17 @@ const registrarClick = (email2, password2, userName) => {
 const ingresarGoogleClick = () => {
   signInWithGoogle()
     .then((result) => {
-      changeHash("#/user-profile");
+      changeHash('#/user-profile');
       // This gives you a Google Access Token. You can use it to access the Google API.
-      let token = result.credential.accessToken;
+      const token = result.credential.accessToken;
       // The signed-in user info.
-      let user = result.user; // ...
-      console.log(token);
+      const user = result.user; // ...
+      // console.log(token);
       const userName = user.displayName;
       const userEmail = user.email;
       const userPhoto = user.photoURL;
       const idUser = user.uid;
-      return promiseOfSetFirebase("users", idUser, {
+      return promiseOfSetFirebase('users', idUser, {
         name: userName,
         userId: idUser,
         email: userEmail,
@@ -94,72 +97,58 @@ const ingresarGoogleClick = () => {
     })
     .catch((error) => {
       // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      if (errorCode == "auth/weak-password") {
-        alert("The password is too weak.");
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === 'auth/weak-password') {
       } else {
         alert(errorMessage);
       }
-      console.log(error);
     });
 };
+
 const cerrarSesionUsuario = () => {
   signOut();
 };
 
-//Funcion que retorna la data del usuario (documento con el id del usuario)
-const obtenerDatosUsuario = (uid) => {
-  return promiseOfgetFirebase("users", uid)
-    .then((doc) => {
-      // console.log(doc.data()
-      return doc.data(); // retorna una promesa
-    })
-    .catch((error) => {
-      console.log("Error getting document:", error);
-    });
-};
+// Funcion que retorna la data del usuario (documento con el id del usuario)
+const obtenerDatosUsuario = uid => promiseOfgetFirebase('users', uid)
+  .then(doc => doc.data(), // retorna una promesa
+  )
+  .catch(() => {
+  });
 
 const eliminarPostAlClick = (idPost, idUserOfPost) => {
   const uidOfCurrentUser = currentUser().uid; // id del usuario logueado actual
-  console.log(uidOfCurrentUser); // id del usuario logueado actual
-  console.log(idUserOfPost); // id del usuario  dentro del objeto post
-  console.log(idPost); // id del post
   if (uidOfCurrentUser === idUserOfPost) {
-    promiseOfdeleteFirebase("posts", idPost)
+    promiseOfdeleteFirebase('posts', idPost)
       .then(() => {
-        console.log("Document successfully deleted!");
       })
-      .catch((error) => {
-        console.error("Error removing document: ", error);
+      .catch(() => {
+        // console.error('Error removing document: ', error);
       });
   } else {
-    alert("You can not delete a comment which was not published by you");
+    'You can not delete a comment which was not published by you';
   }
 };
 
 const editarPostEnFirestore = (idPost, idUserOfPost, commentInputNewValue) => {
   const uidOfCurrentUser = currentUser().uid; // id del usuario logueado actual
-  console.log(idPost); // id del post
   if (uidOfCurrentUser === idUserOfPost) {
-    promiseOfUpdateFirebase("posts", idPost, {
+    promiseOfUpdateFirebase('posts', idPost, {
       content: commentInputNewValue,
     })
       .then(() => {
-        console.log("Document successfully updated!");
       })
-      .catch((error) => {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
+      .catch(() => {
       });
   } else {
-    alert("You can not edit a comment which was not published by you");
+    'You can not edit a comment which was not published by you';
   }
 };
 
 const getPostsInRealtime = (callback) => {
-  promiseOnSnapshotFirebase("posts", (arrOfAllPosts) => {
-    let arrOfPosts = [];
+  promiseOnSnapshotFirebase('posts', (arrOfAllPosts) => {
+    const arrOfPosts = [];
     arrOfAllPosts.forEach((onePost) => {
       arrOfPosts.push({ id: onePost.id, ...onePost.data() });
     });
@@ -168,7 +157,7 @@ const getPostsInRealtime = (callback) => {
 };
 // usuario activo
 const getUserActive = (callback) => {
-  //printUserinfo()
+  // printUserinfo()
   if (currentUser()) {
     // si el usuario ha iniciado sesion y existe un current user
     callback(currentUser()); // printUserinfo() recibe al usuario actual
@@ -180,34 +169,35 @@ const getUserActive = (callback) => {
         callback(user); // printUserInfo recibe al usuario actual
       } else {
         // si no existe un current user
-        unsuscribe(); //entonces se desactiva el observador  //
+        unsuscribe(); // entonces se desactiva el observador  //
       }
     });
   }
 };
+
 const addPostToCloudFirestore = (
   inputComment,
   idUser,
   statusComment,
-  photo
+  photo,
 ) => {
   const f = new Date();
-  let fecha = f.getDate() + "-" + (f.getMonth() + 1) + "-" + f.getFullYear();
-  promiseOfAddFirebase("posts", {
-    hours: f.getHours() + ":" + f.getMinutes(),
+  const fecha = `${f.getDate()}-${f.getMonth() + 1}-${f.getFullYear()}`;
+  promiseOfAddFirebase('posts', {
+    hours: `${f.getHours()}:${f.getMinutes()}`,
     today: fecha,
     content: inputComment,
     userId: idUser,
     state: statusComment,
-    likes: "",
+    likes: '',
     photoPost: photo,
   })
-    .then((docRef) => {
-      console.log(docRef);
-      console.log("Document written with ID: ", docRef.id);
+    .then(() => {
+      // console.log(docRef);
+      // console.log('Document written with ID: ', docRef.id);
     })
     .catch((error) => {
-      console.error("Error adding document: ", error);
+      // console.error('Error adding document: ', error);
     });
 };
 
@@ -215,67 +205,68 @@ const manejarInfoEnviada = (
   inputComment,
   idUser,
   statusComment,
-  /* progress, */ selectedFile
+  /* progress, */ selectedFile,
 ) => {
   if (selectedFile !== undefined) {
     getUrlImageFromStorage(
       selectedFile,
       /* progress, */ (url) => {
         addPostToCloudFirestore(inputComment, idUser, statusComment, url);
-      }
+      },
     );
   } else {
-    addPostToCloudFirestore(inputComment, idUser, statusComment, "");
+    addPostToCloudFirestore(inputComment, idUser, statusComment, '');
   }
 };
 
 const editarPerfil = (name1, age1, sex1, birthCountry, userId1) => {
-  promiseOfUpdateFirebase("users", userId1, {
+  promiseOfUpdateFirebase('users', userId1, {
     name: name1,
     age: age1,
     sex: sex1,
     country: birthCountry,
   })
     .then(() => {
-      console.log("Document successfully updated!");
+      // console.log('Document successfully updated!');
     })
     .catch((error) => {
       // The document probably doesn't exist.
-      console.error("Error updating document: ", error);
+      // console.error('Error updating document: ', error);
     });
 };
 
 export const postLike = (id) => {
   const user = firebase.auth().currentUser;
-  console.log(id)
+  // console.log(id)
 
-  // de la collection post traeme el documento con el ID, "id"
+  // de la collection post traeme el documento con el ID, 'id'
   promiseOfgetFirebase('posts', id)
-  .then((respuesta) => {
-    const post = respuesta.data();
-    if (post.likes == null || post.likes == '') {
-      post.likes = [];
-      // eslint-disable-next-line no-console
-      console.log('entró al like vacio');
-    }
+    .then((respuesta) => {
+      const post = respuesta.data();
+      if (post.likes === null || post.likes === '') {
+        post.likes = [];
+        // eslint-disable-next-line no-console
+        console.log('entró al like vacio');
+      }
 
-    if (post.likes.includes(user.uid)) {
-      for (let i = 0; i < post.likes.length; i++) {
-        if (post.likes[i] === user.uid) { // verifica si ya el usuario está en el array
-          post.likes.splice(i, 1); // sentencia para eliminar un elemento de un array
-          promiseOfUpdateFirebase('posts', id ,{likes: post.likes})
-        }}   
-        } else {
-          post.likes.push(user.uid);
-          promiseOfUpdateFirebase('posts', id ,{likes: post.likes})
-    }
-  })
-  .catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      if (post.likes.includes(user.uid)) {
+        for (let i = 0; i < post.likes.length; i++) {
+          if (post.likes[i] === user.uid) { // verifica si ya el usuario está en el array
+            post.likes.splice(i, 1); // sentencia para eliminar un elemento de un array
+            promiseOfUpdateFirebase('posts', id, { likes: post.likes });
+          }
+        }
+      } else {
+        post.likes.push(user.uid);
+        promiseOfUpdateFirebase('posts', id, { likes: post.likes });
+      }
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
       alert(error.message);
     });
-}
+};
 
 export {
   ingresarClick,
