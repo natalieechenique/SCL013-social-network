@@ -67,12 +67,6 @@ const signInWithGoogle = () => {
   return firebase.auth().signInWithPopup(googleProvider);
 };
 
-// Inicio de sesión con  cuenta de facebook y contraseña de facebook
-const signInWithFacebook = () => {
-  const facebookProvider = new firebase.auth.FacebookAuthProvider();
-  return firebase.auth().signInWithPopup(facebookProvider);
-};
-
 // Cerrar seión
 const signOut = () => {
   return firebase
@@ -108,7 +102,7 @@ const promiseOnSnapshotFirebase = (nameCollection, callback) => {
   return firebase
     .firestore()
     .collection(nameCollection)
-    .orderBy("hours")
+    .orderBy("today", "desc")
     .onSnapshot(callback);
 }; //
 const firebaseAuthState = (callback) => {
@@ -127,10 +121,7 @@ const getUrlImageFromStorage = (selectedFile, /* progress, */ callback) => {
   storageService.on(
     "state_changed",
     () => {
-      // Observe state change events such as progress, pause, and resume
-      /*         var percentage = (snapshot.bytesTransferred /
-                  snapshot.totalBytes) * 100;
-              progress.value = percentage; */
+   
     },
     (error) => {
       // Handle unsuccessful uploads
@@ -150,7 +141,6 @@ export {
   signUp,
   signIn,
   signInWithGoogle,
-  signInWithFacebook,
   signOut,
   currentUser,
   promiseOfSetFirebase,

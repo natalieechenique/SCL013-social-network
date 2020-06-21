@@ -25,7 +25,9 @@ export default () => {
                 <main class='divPost'>
                 
                 <iframe width='300' height='200' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='4' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-              </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QyYbvVAtlWk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lJmnFeZwxpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
 
               </section>
               </main>
