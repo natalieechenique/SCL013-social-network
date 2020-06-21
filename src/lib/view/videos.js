@@ -23,7 +23,11 @@ export default () => {
                 <!--Sube aqui tu video-->
                 <div class='divVideos'>
                 <iframe class='videos' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='4' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-              </div>
+                <iframe class='videos' width='300' height='315' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                <iframe class='videos' width="300" height="315" src="https://www.youtube.com/embed/QyYbvVAtlWk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class='videos' width="300" height="315" src="https://www.youtube.com/embed/lJmnFeZwxpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                </div>
               </section>
               </div>
   `;

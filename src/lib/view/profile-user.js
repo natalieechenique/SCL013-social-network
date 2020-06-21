@@ -121,9 +121,7 @@ export default (user, posts) => {
                <li><a href='#/fanArt'><i class='fas fa-paint-brush'></i><span>Fan Art</span></a></li>                
                </div>
         </nav>
-       
         <div id='Layer1' class='scroll'>
-
         <!--- publicaciones -->
         <main class='divPost'>
         <div id='add-comment-form' class='inputPost'>
@@ -226,7 +224,6 @@ export default (user, posts) => {
     divCommentList.innerHTML = '';
     estadosDePosts(posts, user);
   });
-
   estadosDePosts(posts, user);
   
   return divElement;

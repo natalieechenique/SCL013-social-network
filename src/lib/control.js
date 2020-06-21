@@ -35,18 +35,18 @@ const ingresarClick = (email, password) => {
         const errorMessage = error.message;
         // eslint-disable-next-line no-console
         console.log(errorMessage);
-        if (errorCode === 'auth/weak-password') {
-          alert('El nivel de seguridad de la contraseña es : débil.');
-        } else if (errorCode === 'auth/email-already-in-use') {
+        if (errorCode == 'auth/weak-password') {
+          alert('Tu contraseña es débil Padawan');
+        } else if (errorCode == 'Ya existe esta cuenta') {
           alert('Ya existe esta cuenta');
-        } else if (errorCode === 'auth/invalid-email') {
-          alert('La dirección de correo electrónico es inválida');
-        } else if (errorCode === 'auth/invalid-email') {
-          alert('La dirección de correo electrónico es inválida');
+        } else if (errorCode == 'tu correo electrónico es inválido Padawan') {
+          alert('tu correo electrónico es inválido Padawan');
+        } else if (errorCode == 'La dirección de correo electrónico es inválida Padawan') {
+          alert('La dirección de correo electrónico es inválida Padawan');
         } else {
           alert(
-            'No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado.'
-          )
+            'fuiste eliminado, tal vez te uniste al lado oscuro de la fuerza Padawan'
+          );
         }
         // console.log(error);
       });
@@ -55,7 +55,7 @@ const ingresarClick = (email, password) => {
 
 const registrarClick = (email2, password2, userName) => {
   if (email2 === '' || password2 === '' || userName === '') {
-
+    alert("Completa tus datos para registrarte Padawan");
   } else {
     signUp(email2, password2).then(() => {
       const user = currentUser();
@@ -79,11 +79,9 @@ const ingresarGoogleClick = () => {
   signInWithGoogle()
     .then((result) => {
       changeHash('#/user-profile');
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const token = result.credential.accessToken;
-      // The signed-in user info.
-      const user = result.user; // ...
-      // console.log(token);
+      let token = result.credential.accessToken;
+      let user = result.user; 
+      console.log(token);
       const userName = user.displayName;
       const userEmail = user.email;
       const userPhoto = user.photoURL;
@@ -96,10 +94,10 @@ const ingresarGoogleClick = () => {
       });
     })
     .catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      if (errorCode === 'auth/weak-password') {
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      if (errorCode == 'auth/weak-password') {
+        alert("La fuerza no acompaña a tu contraseña (es debíl");
       } else {
         alert(errorMessage);
       }
@@ -127,7 +125,7 @@ const eliminarPostAlClick = (idPost, idUserOfPost) => {
         // console.error('Error removing document: ', error);
       });
   } else {
-    'You can not delete a comment which was not published by you';
+    alert("No puedes eliminar un comentario que no sea tuyo Padawan");
   }
 };
 
@@ -142,7 +140,7 @@ const editarPostEnFirestore = (idPost, idUserOfPost, commentInputNewValue) => {
       .catch(() => {
       });
   } else {
-    'You can not edit a comment which was not published by you';
+    alert('No puedes editar un comentario que no sea tuyo Padawan');
   }
 };
 
