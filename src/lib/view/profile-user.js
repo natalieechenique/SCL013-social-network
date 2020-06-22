@@ -1,13 +1,18 @@
-import { cerrarSesionUsuario, obtenerDatosUsuario, eliminarPostAlClick, 
-editarPostEnFirestore, manejarInfoEnviada, postLike }
-from '../control.js';
+import {
+  cerrarSesionUsuario,
+  obtenerDatosUsuario,
+  eliminarPostAlClick,
+  editarPostEnFirestore,
+  manejarInfoEnviada,
+  postLike,
+} from '../control.js';
 
 //funcion para hacer una publicación
 const renderOnePost = (post, user, current) => {
   let idPost = post.id;
   let label = document.createElement('div');
   label.innerHTML = `
-  <main class='divPost height-auto'>
+  <main class='divPost'>
   <div id='comment-author' class='encabezado'>
   <p>Publicado por ${user.name}</p>
   <p>${post.hours}, ${post.today}</p> 
@@ -29,14 +34,14 @@ const renderOnePost = (post, user, current) => {
     label.querySelector('#img-post').style.display = 'none';
   }
 
-    // funcion para crear evento al boton que borrar post (btn-delete)
-    const deleteButton = label.querySelector('#btn-delete');
-    deleteButton.addEventListener('click', (e) => {
-      console.log(e.target);
-      const postId = e.target.dataset.idPost;
-      const userIdOfPost = e.target.dataset.uidPost;
-      eliminarPostAlClick(postId, userIdOfPost);
-    });
+  // funcion para crear evento al boton que borrar post (btn-delete)
+  const deleteButton = label.querySelector('#btn-delete');
+  deleteButton.addEventListener('click', (e) => {
+    console.log(e.target);
+    const postId = e.target.dataset.idPost;
+    const userIdOfPost = e.target.dataset.uidPost;
+    eliminarPostAlClick(postId, userIdOfPost);
+  });
 
   // funcion para poder editar el post - agregamos evento al boton editar
   const divCommentContent = label.querySelector('#content-comment-div');
@@ -61,7 +66,8 @@ const renderOnePost = (post, user, current) => {
             newContent
           );
         });
-      } else { 'Solo puedes editar tu comentario Padawan';
+      } else {
+        ('Solo puedes editar tu comentario Padawan');
         divCommentContent.setAttribute('contenteditable', false);
       }
     } else {
@@ -72,7 +78,7 @@ const renderOnePost = (post, user, current) => {
   const imgLikes = label.querySelector(`#btn-likes-${post.id}`);
   imgLikes.addEventListener('click', (e) => {
     postLike(post.id);
-  })
+  });
   return label;
 };
 
@@ -85,7 +91,7 @@ export default (user, posts) => {
     photoUrl = user.photo;
   } catch {
     photoUrl =
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGjBhr15zxJ2Udj1pZ6S3ktJctBu51YukJOoetZc3VrKjxquwN';
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGjBhr15zxJ2Udj1pZ6S3ktJctBu51YukJOoetZc3VrKjxquwN';
   }
 
   // creamos la variable div element para poder mostar el home principal
@@ -95,9 +101,10 @@ export default (user, posts) => {
    <section class='container2'>
    <header class='header2'>
    <!---logo -->
-   <span class='logocont2'>
+   <img src='./darthy.png' class='darthfondo'>
+   <div class='logocont2'>
    <img src='logotitulo.png' class='logotitulo2'>
-   </span>   
+   </div>   
    <!-- muestra foto usuario y nombre by google -->
    <div class='user-name'>
             <div class='element'><img class='image-photo' id='image-user' src='${photoUrl}' alt='default photo'></div>
@@ -126,7 +133,7 @@ export default (user, posts) => {
         <main class='divPost'>
         <div id='add-comment-form' class='inputPost'>
         <textarea id='input-comment' class='text-write'
-        name='comment' type='text' style= 'margin:0px; width:100%; height=300px'; placeholder='Escribe aquí'></textarea>
+        name='comment' type='text' style= 'margin:0px; width:100%; height:100px'; placeholder='Escribe aquí'></textarea>
         <input type='file' id='image-file' class='inputfile'><i class='fas fa-folder-open'></i>
         <br>
         <input type='checkbox' id='private' value='true'><label for='private' class='privatePost'>Mostrar solo para mi</label>
@@ -164,12 +171,7 @@ export default (user, posts) => {
     } else {
       status = false;
     }
-    return manejarInfoEnviada(
-      inputComment,
-      user.userId,
-      status,
-      selectedFile
-    );
+    return manejarInfoEnviada(inputComment, user.userId, status, selectedFile);
   });
 
   // Agregamos evento al boton cerrar session
@@ -191,8 +193,8 @@ export default (user, posts) => {
     }
   };
 
-   // con esta funcion podre ver todos los post
-   const estadosDePosts = (posts, user) => {
+  // con esta funcion podre ver todos los post
+  const estadosDePosts = (posts, user) => {
     switch (validar()) {
       case 'publicPost':
         posts.forEach((onePost) => {
@@ -225,6 +227,6 @@ export default (user, posts) => {
     estadosDePosts(posts, user);
   });
   estadosDePosts(posts, user);
-  
+
   return divElement;
 };

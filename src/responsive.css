@@ -1,274 +1,294 @@
 /* Tablet */
- @media only screen and (min-width:751px) and (max-width:980px) {
- 
-body {
-    font-size: 20px;
-    resize: none;
+@media only screen and (min-width: 751px) and (max-width: 980px) {
+  .containerAll {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 850px;
+    padding: 20px;
+  }
+
+  .header2 {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+    width: 60%;
+  }
+
+  .datos {
+    padding-top: 8px;
+  }
+
+  .iniciasesion {
+    font-size: 32px;
+  }
+
+  .recuperar,
+  .aqui {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .user-name {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .menu {
     width: 100%;
   }
-
-    .containerAll{
-        display:flex;
-        flex-direction:column;
-        text-align:center;
-        align-content: center; 
-        justify-content:center;
-        padding-top:50px;
-}
-        .container2{
-            display:flex;
-            flex-direction:column;
-            text-align:center;
-            align-items:center;
-            align-content: center;
-            width:90%;
-            height:750px;
-            padding:20px;
-    }
-       
-        .header2 {
-            display:flex;
-            flex-direction: column;
-            align-content: flex-start;
-            justify-items: center;
-            text-align: center;
-            padding:20px;
-        }
-
-        .login {
-            display:flex;
-            flex-direction:column;
-            text-align:center;
-            justify-content:center;
-            padding:30px;
-            padding-top:20px;
-            width:50%;
-            }
-
-        .iniciasesion {
-           font-size:32px;
-            }
-
-            .iconos {
-                padding: 20px;
-              }
-              
-              .recuperar, .aqui {
-                font-size: 18px;
-                padding: 10px;
-              }
-        .user-name {
-            justify-self: center;
-            text-align:center;
-          }
-
-        .menu {
-            width:100%;
-        }
-        .ul li a{
-            font-size:14px;
-        }
-
-        .logotitulo {
-            width:150px;
-            height:75px;
-          }
-
-        .logotitulo2{
-            width:70px;
-            height:35px;
-          }
-
-           .image-photo {
-            width:70px;
-            height:70px;
-            align-self: flex-start;
-          }
- 
-        .subtitle {
-            font-family: monospace;
-            font-size: 20px;
-          }
-
-          .divVideos {
-            display:flex;
-            justify-content: center;
-          } 
-          
-          .videos {
-            display:flex;
-            text-align: center;
-            width:70%;
-            height:400px;
-            padding: 10px;
-          }
-          
-          .divImagenes {
-            display:flex;
-            justify-content: center;
-            align-self: center;
-            text-align: center;
-            padding: 10px;
-          } 
-          
-          .memes, .fanart {
-            padding: 10px;
-            text-align: center;
-          }
-
-          .scroll {
-            width:100%; 
-            height:500px; 
-            overflow: scroll;
-          }
-
-          footer {
-            font-family: monospace;
-             font-size:20px;
-             font-style: italic;
-             }
-    }
-
-         
-/* Desktop */
-@media only screen and (min-width:981px) { 
-body {
-    font-size: 18px;
-    resize: none;
-    background-size: cover;
-    height: 100%;
-    text-align:center;
+  .ul li a {
+    font-size: 14px;
   }
-    .containerAll {
-        display:flex;
-        flex-direction:column;
-        text-align:center;
-        align-content: center;
-        align-items:center;
-        justify-content:center;
-        padding:20px;
-        padding-top:50px;
-    }
-        .container2 {
-        display:flex;
-        flex-direction:column;
-        text-align:center;
-        align-content: center;
-        width:70%;
-        height:850px;
-        padding:20px;
+
+  .darthfondo {
+    display: flex;
+    justify-items: left;
+    justify-content: left;
+    justify-self: left;
+  }
+
+  .logocont2 {
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .logotitulo {
+    width: 150px;
+    height: 75px;
+  }
+
+  .logotitulo2 {
+    width: 140px;
+    height: 70px;
+  }
+
+  .image-photo {
+    width: 60px;
+    height: 60px;
+    justify-self: right;
+    align-self: flex-start;
+    text-align: right;
+  }
+
+  .subtitle {
+    font-family: monospace;
+    font-size: 20px;
+  }
+
+  .divVideos {
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .videos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+  }
+
+  .divImagenes {
+    text-align: center;
+  }
+
+  .memes,
+  .fanart {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 100%;
+    height: 800px;
+    overflow: scroll;
+  }
+
+  footer {
+    font-family: monospace;
+    font-size: 20px;
+    font-style: italic;
+  }
 }
 
-.login {
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-    justify-content:center;
-    padding:30px;
-    padding-top:50px;
-    width:30%;
-    }
+/* Desktop */
+@media only screen and (min-width: 981px) {
+  .containerAll {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 50px;
+  }
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    width: 70%;
+    height: 850px;
+    padding: 20px;
+  }
 
-    .iniciasesion {
-        font-size:32px;
-         }
+  .login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+    padding-top: 50px;
+    width: 50%;
+  }
 
-         .iconos {
-            padding: 20px;
-          }
-          
-          .recuperar, .aqui {
-            font-size: 18px;
-            padding: 10px;
-          }
-          
-        .header2 {
-            display:flex;
-            flex-direction: column;
-            align-content: flex-start;
-            justify-items: center;
-            text-align: center;
-        }
+  .datos {
+    margin: 5px;
+  }
 
-        .user-name {
-            justify-self: center;
-            text-align:center;
-          }
+  .iniciasesion {
+    font-size: 32px;
+  }
 
-        .menu {
-            width:100%;
-        }
-        .ul li a {
-            font-size:16px;
-        }
+  .iconos {
+    padding: 20px;
+  }
 
-        .logotitulo {
-            width:150px;
-            height:75px;
-          }
+  .recuperar,
+  .aqui {
+    font-size: 18px;
+    padding: 10px;
+  }
 
-        .logotitulo2{
-            width:100px;
-            height:50px;
-          }
+  .header2 {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-content: flex-start;
+    justify-items: center;
+    text-align: center;
+  }
 
-           .image-photo {
-            width:100px;
-            height:100px;
-            align-self: flex-start;
-          }
- 
-        .subtitle {
-            font-family: monospace;
-            font-size: 20px;
-          }
+  .darthfondo {
+    display: flex;
+    justify-items: left;
+    justify-content: left;
+    justify-self: left;
+  }
 
-          a {
-              font-size: 20px;
-          }
+  .user-name {
+    justify-items: right;
+    justify-content: right;
+    justify-self: right;
+    text-align: center;
+  }
 
-          h3 {
-              font-size:20px;
-          }
+  .menu {
+    width: 100%;
+  }
+  .ul li a {
+    font-size: 16px;
+  }
 
-          .divVideos {
-            display:flex;
-            justify-content: center;
-            padding: 20px;
-          } 
-          
-          .videos {
-            display:flex;
-            text-align: center;
-            width:70%;
-            height:400px;
-            padding: 20px;
-          }
-          
-          .divImagenes {
-            display:flex;
-            justify-content: center;
-            align-self: center;
-            text-align: center;
-            padding: 10px;
-          } 
-          
-          .memes, .fanart {
-            padding: 10px;
-            text-align: center;
-          }
+  .logocont2 {
+    padding-top: 50px;
+    align-self: flex-start;
+    text-align: right;
+    justify-content: right;
+  }
 
-          .scroll {
-            width:100%; 
-            height:550px; 
-            overflow: scroll;
-          }
+  .logotitulo {
+    width: 170px;
+    height: 95px;
+  }
 
-          footer {
-         font-family: monospace;
-          font-size:20px;
-          font-style: italic;
-          }
-          
-    }
-         
+  .logotitulo2 {
+    width: 170px;
+    height: 85px;
+  }
+
+  .image-photo {
+    width: 60px;
+    height: 60px;
+    align-self: flex-start;
+  }
+
+  .subtitle {
+    font-family: monospace;
+    font-size: 18px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .divVideos {
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .videos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+  }
+
+  .divImagenes {
+    text-align: center;
+  }
+
+  .memes,
+  .fanart {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .scroll {
+    width: 100%;
+    height: 800px;
+    overflow: scroll;
+  }
+
+  footer {
+    font-family: monospace;
+    font-size: 21px;
+    color:#9f0be4; 
+    font-style: italic;
+  }
+}

@@ -4,9 +4,9 @@ export default () => {
   divElement.setAttribute('class', 'containerAll');
   divElement.innerHTML = `
       <section class='container2'>
-      <header class='header2'>
+      <header class='header'>
       <!-- logo -->
-      <div class='logocont2'>
+      <div class='logocont3'>
       <img src='logotitulo.png' width='100' height='50'>
       </div>   
       </header>
@@ -25,6 +25,7 @@ export default () => {
               <img id='arte1' class='fanart' src='ARTE1.jpg' width='300' height='300'> <vr>
               <img id='arte2' class='fanart' src='ARTE2.jpg' width='300' height='300'> <vr>
               <img id='arte3' class='fanart' src='ARTE3.jpg' width='300' height='300'> <vr>
+              <img id='arte4' class='fanart' src='ARTE4.jpg' width='300' height='300'> <vr>
                </div>
             </div>
             </section>   

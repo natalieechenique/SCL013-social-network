@@ -1,3 +1,6 @@
+/* eslint-disable no-alert */
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
 const online = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -11,8 +14,11 @@ const online = () => {
 const signUp = (email, password) => firebase
   .auth()
   .createUserWithEmailAndPassword(email, password)
+  // eslint-disable-next-line no-unused-vars
   .then((user) => {
+    // eslint-disable-next-line no-use-before-define
     verificarEmail(); // agregar nombre a user
+    // eslint-disable-next-line no-alert
     alert('Verifica tu email y podras acceder');
   })
   .catch((error) => {
@@ -21,7 +27,7 @@ const signUp = (email, password) => firebase
     alert(error.message);
   });
 
-// Inicion de sesión  con solo email y contraseña
+// Inicio de sesión  con solo email y contraseña
 const signIn = (email, password) => firebase
   .auth()
   .signInWithEmailAndPassword(email, password)
@@ -32,6 +38,7 @@ const signIn = (email, password) => firebase
           window.location.hash = '#/user-profile';
         } else {
           alert('Se necesita verificar email para ingresar');
+          // eslint-disable-next-line no-use-before-define
           signOut();
         }
       }
@@ -97,11 +104,11 @@ const getUrlImageFromStorage = (selectedFile, /* progress, */ callback) => {
     () => {
     },
     (error) => {
-      console.log(error);
+      // console.log(error);
     },
     () => {
       storageService.snapshot.ref.getDownloadURL().then((url) => {
-        console.log(url);
+        // console.log(url);
         callback(url);
       });
     },

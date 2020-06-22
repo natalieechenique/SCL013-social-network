@@ -4,9 +4,9 @@ export default () => {
   divElement.setAttribute('class', 'containerAll');
   divElement.innerHTML = `
      <section class='container2'>
-        <header class='header2'>
+        <header class='header'>
             <!---logo -->
-            <div class='logocont2'>
+            <div class='logocont3'>
             <img src='logotitulo.png' width='100' height='50'>
             </div>   
             </header>
@@ -22,10 +22,9 @@ export default () => {
         <div id='Layer1' class='scroll'>
                 <!--Sube aqui tu video-->
                 <div class='divVideos'>
-                <iframe class='videos' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='4' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-                <iframe class='videos' width='300' height='315' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-                <iframe class='videos' width="300" height="315" src="https://www.youtube.com/embed/QyYbvVAtlWk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe class='videos' width="300" height="315" src="https://www.youtube.com/embed/lJmnFeZwxpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class='videos' src='https://www.youtube.com/embed/OQO4YjxjMaY' frameborder='1' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                <iframe class='videos' src='https://www.youtube.com/embed/QyYbvVAtlWk' frameborder='1' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+                <iframe class='videos' src='https://www.youtube.com/embed/lJmnFeZwxpg' frameborder='1' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
                 </div>
                 </div>
               </section>

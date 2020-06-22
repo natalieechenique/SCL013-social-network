@@ -44,7 +44,9 @@ export default (user) => {
 
   // aca el usuario podra ingresar sus datos ---falta  mostrar en pantalla verificar
   if (
+  // eslint-disable-next-line operator-linebreak
     user.age === undefined ||
+    // eslint-disable-next-line operator-linebreak
     user.sex === undefined ||
     user.country === undefined
   ) {
@@ -84,11 +86,10 @@ export default (user) => {
     const newAge = userAge.textContent;
     const newSex = userSex.textContent;
     const newBirthCountry = userBirthCountry.textContent;
-
-    console.log(newFullName);
-    console.log(newAge);
-    console.log(newSex);
-    console.log(newBirthCountry);
+    // console.log(newFullName);
+    // console.log(newAge);
+    // console.log(newSex);
+    // console.log(newBirthCountry);
     editarPerfil(newFullName, newAge, newSex, newBirthCountry, user.userId);
   });
 

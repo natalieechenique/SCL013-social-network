@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
@@ -30,39 +31,37 @@ const ingresarClick = (email, password) => {
         changeHash('#/user-profile');
       })
       .catch((error) => {
-        // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         // eslint-disable-next-line no-console
-        console.log(errorMessage);
-        if (errorCode == 'auth/weak-password') {
+        // console.log(errorMessage);
+        if (errorCode === 'auth/weak-password') {
           alert('Tu contraseña es débil Padawan');
-        } else if (errorCode == 'Ya existe esta cuenta') {
+        } else if (errorCode === 'Ya existe esta cuenta') {
           alert('Ya existe esta cuenta');
-        } else if (errorCode == 'tu correo electrónico es inválido Padawan') {
+        } else if (errorCode === 'tu correo electrónico es inválido Padawan') {
           alert('tu correo electrónico es inválido Padawan');
-        } else if (errorCode == 'La dirección de correo electrónico es inválida Padawan') {
+        } else if (
+          errorCode === 'La dirección de correo electrónico es inválida Padawan'
+        ) {
           alert('La dirección de correo electrónico es inválida Padawan');
         } else {
-          alert(
-            'fuiste eliminado, tal vez te uniste al lado oscuro de la fuerza Padawan'
-          );
+          alert('fuiste eliminado, tal vez te uniste al lado oscuro de la fuerza Padawan');
         }
-        // console.log(error);
       });
-  };
+  }
 };
 
 const registrarClick = (email2, password2, userName) => {
   if (email2 === '' || password2 === '' || userName === '') {
-    alert("Completa tus datos para registrarte Padawan");
+    alert('Completa tus datos para registrarte Padawan');
   } else {
     signUp(email2, password2).then(() => {
       const user = currentUser();
       return promiseOfSetFirebase('users', user.uid, {
         name: userName,
         photo:
-        'https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png',
+          'https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png',
         userId: user.uid,
         email: email2,
       }).then(() => {
@@ -79,9 +78,9 @@ const ingresarGoogleClick = () => {
   signInWithGoogle()
     .then((result) => {
       changeHash('#/user-profile');
-      let token = result.credential.accessToken;
-      let user = result.user; 
-      console.log(token);
+      const token = result.credential.accessToken;
+      const user = result.user;
+      // console.log(token);
       const userName = user.displayName;
       const userEmail = user.email;
       const userPhoto = user.photoURL;
@@ -94,10 +93,10 @@ const ingresarGoogleClick = () => {
       });
     })
     .catch((error) => {
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert("La fuerza no acompaña a tu contraseña (es debíl");
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === 'auth/weak-password') {
+        alert('La fuerza no acompaña a tu contraseña (es debíl');
       } else {
         alert(errorMessage);
       }
@@ -110,22 +109,21 @@ const cerrarSesionUsuario = () => {
 
 // Funcion que retorna la data del usuario (documento con el id del usuario)
 const obtenerDatosUsuario = uid => promiseOfgetFirebase('users', uid)
-  .then(doc => doc.data(), // retorna una promesa
+  .then(
+    doc => doc.data(), // retorna una promesa
   )
-  .catch(() => {
-  });
+  .catch(() => {});
 
 const eliminarPostAlClick = (idPost, idUserOfPost) => {
   const uidOfCurrentUser = currentUser().uid; // id del usuario logueado actual
   if (uidOfCurrentUser === idUserOfPost) {
     promiseOfdeleteFirebase('posts', idPost)
-      .then(() => {
-      })
+      .then(() => {})
       .catch(() => {
         // console.error('Error removing document: ', error);
       });
   } else {
-    alert("No puedes eliminar un comentario que no sea tuyo Padawan");
+    alert('No puedes eliminar un comentario que no sea tuyo Padawan');
   }
 };
 
@@ -135,10 +133,8 @@ const editarPostEnFirestore = (idPost, idUserOfPost, commentInputNewValue) => {
     promiseOfUpdateFirebase('posts', idPost, {
       content: commentInputNewValue,
     })
-      .then(() => {
-      })
-      .catch(() => {
-      });
+      .then(() => {})
+      .catch(() => {});
   } else {
     alert('No puedes editar un comentario que no sea tuyo Padawan');
   }
@@ -244,12 +240,13 @@ export const postLike = (id) => {
       if (post.likes === null || post.likes === '') {
         post.likes = [];
         // eslint-disable-next-line no-console
-        console.log('entró al like vacio');
+        // console.log('entró al like vacio');
       }
 
       if (post.likes.includes(user.uid)) {
         for (let i = 0; i < post.likes.length; i++) {
-          if (post.likes[i] === user.uid) { // verifica si ya el usuario está en el array
+          if (post.likes[i] === user.uid) {
+            // verifica si ya el usuario está en el array
             post.likes.splice(i, 1); // sentencia para eliminar un elemento de un array
             promiseOfUpdateFirebase('posts', id, { likes: post.likes });
           }

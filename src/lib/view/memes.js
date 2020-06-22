@@ -3,11 +3,10 @@ export default () => {
   const divElement = document.createElement('div');
   divElement.setAttribute('class', 'containerAll');
   divElement.innerHTML = `
-    <div class='containerAll'>
         <section class='container2'>
-        <header class='header2'>
+        <header class='header'>
 <!---logo -->
-<div class='logocont2'>
+<div class='logocont3'>
 <img src='logotitulo.png' width='100' height='50'>
 </div>   
     </header>
@@ -26,6 +25,7 @@ export default () => {
                         <img id='meme1' class='memes' src='MEME1.jpg' width='250' height='240'> <vr>
                         <img id='meme2' class='memes' src='MEME2.jpg' width='250' height='240'> <vr>
                         <img id='meme3' class='memes' src='MEME3.jpg' width='250' height='240'> <vr>
+                        <img id='meme4' class='memes' src='MEME4.jpg' width='250' height='240'> <vr>
                     </div>
               </div>
               </section>

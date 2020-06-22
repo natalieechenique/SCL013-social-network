@@ -8,73 +8,77 @@ html {
 
 #root {
   background-size: cover;
-  text-align:center;
+  text-align: center;
 }
 
 body {
   font-family: sans-serif;
-  background-image: url("fondo.jpg");
+  background-image: url('fondo.jpg');
   background-color: #1d0303;
   resize: none;
   background-repeat: no-repeat;
   background-size: cover;
-  padding:10px;
+  padding: 10px;
   height: 100%;
   margin: 0;
 }
 
 .containerAll {
- display:flex;
- flex-direction: column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
 
 .container2 {
-  background-color: #e6dde3f5;
+  background-color: #f0d8d8;
   border-radius: 20px;
-  padding:20px;
+  padding: 20px;
   align-items: center;
-  text-align:center;
-  height:530px;
+  text-align: center;
+  height: 530px;
 }
 
 header {
-  background-color: #f1ebeff5;
+  background-color: #faf3f7dc;
   padding: 10px;
   align-items: center;
   align-content: center;
   text-align: center;
   border-radius: 6px;
   width: 100%;
-  border-bottom: 2px solid rgb(219, 189, 211);
+  border-bottom: 2px solid rgba(179, 152, 165, 0.788);
 }
 
 .header2 {
-  display:flex;
+  display: flex;
   align-content: flex-start;
   justify-items: center;
-  text-align:center;
-  border-bottom: 2px solid rgb(230, 215, 226);
+  text-align: center;
+  border-bottom: 2px solid rgba(179, 152, 165, 0.788);
   border-radius: 10px;
 }
 
 .header3 {
-  text-align:center;
+  text-align: center;
   border-bottom: 2px solid rgb(230, 215, 226);
   border-radius: 10px;
 }
 
+.darthfondo {
+  display: none;
+}
+
 .logotitulo {
-width: 150px;
-height: 75;
+  width: 150px;
+  height: 75;
 }
 
 .logotitulo2 {
   width: 70px;
   height: 35px;
-  }
+}
 
 .subtitle {
   font-family: monospace;
@@ -84,7 +88,7 @@ height: 75;
 .login {
   display: grid;
   grid-gap: 3px;
-  text-align:center;
+  text-align: center;
   padding: 15px;
   width: 100%;
 }
@@ -93,23 +97,13 @@ height: 75;
   text-align: center;
   font-size: 18px;
   color: rgb(95, 73, 107);
-} 
+}
 
 .datos {
   margin-bottom: 3px;
   border-radius: 5px;
   padding: 6px;
   box-shadow: 3px 8px 10px -7px rgb(54, 3, 3);
-}
-
-.ingresogoogle {
-  text-align: center;
-}
-
-#icon-google {
-  font-size: 10px;
-  text-align: center;
-  align-content: center;
 }
 
 .btn {
@@ -119,12 +113,8 @@ height: 75;
   padding: 6px;
 }
 
-.iconos {
-  text-align: center;
-  padding: 10px;
-}
-
-.recuperar, .aqui {
+.recuperar,
+.aqui {
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -142,48 +132,41 @@ height: 75;
   border-radius: 40%;
 }
 
-.nombre {
-  font-size: 12px;
-}
-
 .logotitulo {
-  text-align:center;
+  text-align: center;
 }
 
 .user-name {
   justify-self: center;
-  text-align:center;
+  text-align: center;
+}
+
+.nombre {
+  font-size: 12px;
 }
 
 .logocont2 {
   align-self: flex-start;
- text-align: left;
- }
- 
-.image-photo {
-  width:50px;
-  height:50px;
+  text-align: left;
 }
 
-.element-photo2 {
-  text-align: center;
+.image-photo {
+  width: 50px;
+  height: 50px;
 }
 
 .scroll {
-text-align:center;
+  text-align: center;
 }
 
 footer {
-  color:white;
+  color: white;
   text-align: center;
   font-size: 14px;
-  padding:8px;
+  padding: 8px;
 }
 
-
- 
 /* MENU TOP DESKTOP */
-
 label .icono {
   display: none;
   font-size: 30px;
@@ -213,7 +196,7 @@ header label .icono:hover {
 }
 
 .menu {
-  padding: 10px;
+  padding: 15px;
   box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
   border-radius: 7px;
 }
@@ -234,7 +217,7 @@ header label .icono:hover {
   color: rgb(0, 0, 0);
   box-shadow: 0px 8px 16px 0px rgba(56, 51, 51, 0.795);
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   font-size: 12px;
   border: none;
   border-radius: 6px;
@@ -242,22 +225,11 @@ header label .icono:hover {
   display: block;
   color: #fff;
   text-decoration: none;
-} 
-
+}
 
 /* POST */
-
 .inputPost {
-text-align:left;
-}
-
-#sign-out {
-  text-align: center;
-  font-size: 12px;
-}
-
-.small sign-out {
-  font-size: 12px;
+  text-align: left;
 }
 
 #valores {
@@ -282,18 +254,18 @@ text-align:left;
   padding: 0px;
   box-shadow: 3px 8px 10px -7px rgb(202, 149, 149);
   border-radius: 6px;
-  width:100%;
+  width: 100%;
 }
 
 .box2 {
-  background-color: #dfd0ca;
+  background-color: #ffdfd2;
   padding-bottom: 10px;
   border-radius: 5px;
   border-bottom: 2px solid rgb(241, 211, 198);
 }
 
 .encabezado {
-  background-color: #d6c0b5;
+  background-color: #fcd4c9;
 }
 
 .edit-options {
@@ -309,39 +281,30 @@ text-align:left;
   font-size: 12px;
 }
 
-.input2 {
-  text-align: center;
-}
-
-iframe {
-  width:100%;
-  display: flex;
-  text-align: center;
-  align-self: center;
-  margin-left: 6px;
-}
-
 .divVideos {
-  width:100%;
-  height:600px;
+  width: 100%;
+  height: 600px;
   align-self: center;
   text-align: center;
-  padding: 10px;
-} 
+  padding: 20px;
+}
 
 .videos {
-  width:100%;
-  text-align:center;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .divImagenes {
   align-self: center;
   text-align: center;
   padding: 20px;
-  height:700px;
-} 
+  height: 700px;
+}
 
-.memes, .fanart {
+.memes,
+.fanart {
   padding: 10px;
 }
 
@@ -355,34 +318,21 @@ iframe {
   padding-top: 40px;
 }
 
-.element {
-  text-align: center;
-}
-
 .box1 {
   justify-content: right;
-  text-align:right;
+  text-align: right;
 }
 
 .menu2 {
-text-align:center;
-}
-
-.edit{
-  text-align:center;
-}
-
-.formulario1 {
-  text-align:center;
+  text-align: center;
 }
 
 .scroll {
-  width:100%; 
-  height:250px; 
+  width: 100%;
+  height: 250px;
   overflow: scroll;
 }
 
 * {
   cursor: url(http://cur.cursors-4u.net/mechanics/mec-1/mec68.cur), auto !important;
 }
-

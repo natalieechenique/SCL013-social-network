@@ -7,10 +7,10 @@ const changeview = (route) => {
   root.innerHTML = '';
   switch (route) {
     case '#/':
-      root.appendChild(components.login()); //pagina login
+      root.appendChild(components.login()); // pagina login
       break;
     case '#/registro':
-      root.appendChild(components.registro()); //pagina para registrar
+      root.appendChild(components.registro()); // pagina para registrar
       break;
 
     case '#/user-profile': // perfil del usuario
@@ -26,6 +26,7 @@ const changeview = (route) => {
                 root.appendChild(components.profile(dataUser, arrPosts));
               });
             })
+            // eslint-disable-next-line no-unused-vars
             .catch((error) => {
               // console.log(error);
             });
@@ -35,9 +36,9 @@ const changeview = (route) => {
       };
       getUserActive(printUserInfo);
       break;
-
-    case '#/edit-profile': //pagina editar el perfil
+    case '#/edit-profile': // pagina editar el perfil
       {
+        // eslint-disable-next-line no-shadow
         const printUserInfo = (user) => {
           if (user) {
             const uid = user.uid;
@@ -51,16 +52,13 @@ const changeview = (route) => {
         getUserActive(printUserInfo);
       }
       break;
-
-    case '#/videos': //pagina de videos
+    case '#/videos': // pagina de videos
       root.appendChild(components.videos());
       break;
-
-    case '#/memes': //pagina de memes
+    case '#/memes': // pagina de memes
       root.appendChild(components.memes());
       break;
-
-    case '#/fanArt': //pagina de fans art
+    case '#/fanArt': // pagina de fan art
       root.appendChild(components.fanArt());
       break;
     default:
