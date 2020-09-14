@@ -7,7 +7,7 @@ export default () => {
         <header class='header'>
             <!---logo -->
             <div class='logocont3'>
-            <img src='logotitulo.png' width='100' height='50'>
+            <a href="#/user-profile"> <img src='logotitulo.png' width='100' height='50'></a>
             </div>   
             </header>
                 <!---menu pagina-->

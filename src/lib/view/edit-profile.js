@@ -9,7 +9,7 @@ export default (user) => {
     <header class='header3'>
     <!---logo -->
     <span class='logocont2'>
-    <img src='logotitulo.png' class='logotitulo2'>
+    <a href="#/user-profile"> <img src='logotitulo.png' width='100' height='50'></a>
   </span>
     <div class='element-photo2'><img id='user-image' class='image-photo-edit' src='${user.photo}' alt='default photo'>
    <br>
